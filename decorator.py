@@ -1,12 +1,19 @@
-def cheaker(func):
-    def wrapper(x, y):
-        if y == 0:
-            return print("error zeroo division :(((")
-        else:
-            return func(x, y)
+def strong(func):
+    def wrapper():
+        return '<strong>' + func() + '</strong>'
     return wrapper
-@cheaker
-def divider(x , y):
-    print(x/y)
 
-divider(2,0)
+
+
+def emphasis(func):
+    def wrapper():
+        return '<em>' + func() + '</em>'
+    return wrapper
+
+
+@strong
+@emphasis
+def greet():
+    return 'hello'
+
+print(greet())
