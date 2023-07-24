@@ -1,14 +1,12 @@
-def my_decorators(func):
+def cheaker(func):
     def wrapper(x, y):
         if y == 0:
-            return print(("what the fuck zero error"))
+            return print("error zeroo division :(((")
         else:
-            return func(x,y)
-
+            return func(x, y)
     return wrapper
-@my_decorators
-def divide(x,y):
+@cheaker
+def divider(x , y):
     print(x/y)
 
-divide(1,)
-
+divider(2,0)
