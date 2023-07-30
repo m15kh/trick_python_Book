@@ -1,8 +1,11 @@
-a = [1, 2, 3, 4, 5]
-b = a
-print(b is a)
-c = list(a)
+class Car:
+    def __init__(self, color, mileage):
+        self.color = color
+        self.mileage = mileage
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('f'{self.color!r}, {self.mileage!r})')
 
 
-print(a==c)
-print(c is a)
+
+car1 = Car("red", 1000)
+print(car1)
