@@ -16,3 +16,12 @@ def negated(seq):
 
 chain3 = negated(squared(integers()))
 print(list(chain3))
+
+
+#short form above code
+# generator chain expressions
+
+integers = range(8)
+squared = (i * i for i in integers)
+negated = (-i for i in squared)
+print(list(negated))
