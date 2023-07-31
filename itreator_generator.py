@@ -1,20 +1,18 @@
-class Repeater:
-    def __init__(self,value):
-        self.value = value
-    def __iter__(self):
-        return self
-    def __next__(self):
-        return self.value
+def integers():
+    for i in range(1, 9):
+        yield i
+chain = integers()
 
+def squared(seq):
+    for i in seq:
+        yield i * i
 
-#implement above code  with generator
+chain2 = squared(integers())
+print(list(chain2))
 
+def negated(seq):
+    for i in seq:
+        yield -i
 
-
-def repeater(value):
-    while True:
-        yield value
-
-
-for x in repeater("hi"):
-    print(x)
+chain3 = negated(squared(integers()))
+print(list(chain3))
